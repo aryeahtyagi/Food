@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".MainFragment"
     android:background="@color/yellow_primary">
+<!--    android:background="@color/yellow_primary"-->
+<!--    android:backgroundTint="@color/yellow_primary">-->
 
     <ImageView
         android:id="@+id/imageView3"
@@ -88,12 +90,13 @@
         android:id="@+id/text45"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/amiko_semibold"
         android:text="Top Restaurants"
         android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
-        tools:layout_editor_absoluteX="15dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -101,20 +104,33 @@
         android:layout_height="0dp"
         android:layout_marginTop="25dp"
         android:background="@drawable/homebox"
-        android:paddingTop="15dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text45"
         app:layout_constraintVertical_bias="0.0"
         tools:layout_editor_absoluteX="0dp">
 
-        <androidx.constraintlayout.utils.widget.ImageFilterButton
-            android:layout_width="wrap_content"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler1"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#E3E3E2"
-            android:src="@drawable/homeitem"
+            android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/quote"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/quote"
+            android:id="@+id/quote"
+            app:layout_constraintBottom_toBottomOf="@id/constraintLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="13sp"
+            android:textStyle="italic"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
