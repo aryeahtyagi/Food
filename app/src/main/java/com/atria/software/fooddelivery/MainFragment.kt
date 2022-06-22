@@ -47,8 +47,10 @@ class MainFragment : Fragment() {
             recyclerView.adapter = myadapter
             myadapter.setOnItemClickListener(object :Myadapter.onItemClickListener{
                 override fun onItemClick(position: Int) {
-
-                    var intentt: Intent
+                    val intent= Intent(context, MenuFragment::class.java)
+                     val bundle: Bundle
+                    intent.putExtra("data",it)
+                    startActivity(intent)
 
 
                 }
